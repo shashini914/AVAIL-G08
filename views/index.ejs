@@ -1,0 +1,193 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+  <div class="col-12 col-lg-6">
+    <img src="/img/index1.png" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="avail main Node.js">
+  </div>
+
+  <div class="col-12 col-lg-6">
+    <h1 class="display-5 fw-bold mb-3">A Range Of Services Bought To Your Fingertips By AVAIL</h1>
+    <p class="lead">
+      With the covid-19 pandemic, the economic crisis, loss of jobs, inflation, a degrading standard
+       of living and many more problems the beautiful nation of Sri Lanka and its people have been through a lot. 
+       AVAIL's mission is to help the people and the nation in order to make Sri Lanka better than ever.
+        AVAIL is a application that aims to connect service providers, freelancers and skilled individuals with customers 
+        across the country. Therefore providing everyone a fair platform to advertise their services and allowing clients to 
+        easily find a large variety of services all in one place.
+    </p>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+      <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore services</a>
+     
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Categories Start -->
+
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+
+  <% if(categories != '') { %>
+    <% categories.forEach(function(category, index) { %>
+      <a href="/categories/<%- category.name %>" class="col text-center category__link">
+        <div class="category__img shadow">
+          <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%- category.name %></div>
+      </a>
+    <% }) %>
+  <% } %>
+
+
+
+</div>
+<!-- Categories End -->
+
+
+
+<!-- Latest Start -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Latest added Sellers</h2>
+    <a href="/explore-latest" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+    <% if(service != '') { %>
+      <% service.latest.forEach(function(seller, index){ %>
+      <a href="/seller/<%= seller._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= seller.image %>" alt="<%= seller.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= seller.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>This category is empty at the moment.</p>
+    <% } %>
+  </div>
+
+</section>
+<!-- Latest End -->
+
+<!-- Painter Start -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Painter category</h2>
+    <a href="/categories/Painter" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(typeof service.painter !== 'undefined' && service.painter.length > 0) { %>
+      <% service.painter.forEach(function(seller, index){ %>
+      <a href="/seller/<%= seller._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= seller.image %>" alt="<%= seller.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= seller.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>This category is empty at the moment.</p>
+    <% } %>
+  </div>
+</section>
+<!-- Painter End -->
+
+<!-- Tutors Start -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Tutors category</h2>
+    <a href="/categories/Tutors" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(service.Tutors != '') { %>
+      <% service.Tutors.forEach(function(seller, index){ %>
+      <a href="/seller/<%= seller._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= seller.image %>" alt="<%= seller.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= seller.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>This category is empty at the moment.</p>
+    <% } %>
+  </div>
+</section>
+<!-- Tutors End -->
+
+<!-- Builders  -->
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Builders category</h2>
+    <a href="/categories/Builders" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(service.Builders != '') { %>
+      <% service.Builders.forEach(function(seller, index){ %>
+      <a href="/seller/<%= seller._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= seller.image %>" alt="<%= seller.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= seller.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>This category is empty at the moment.</p>
+    <% } %>
+  </div>
+</section>
+<!--builders End -->
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Electricians category</h2>
+    <a href="/categories/Electricians" class="ms-auto">View More</a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(service.Electricians != '') { %>
+      <% service.Electricians.forEach(function(seller, index){ %>
+      <a href="/seller/<%= seller._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="/uploads/<%= seller.image %>" alt="<%= seller.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= seller.name %></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>This category is empty at the moment.</p>
+    <% } %>
+  </div>
+</section>
+
+
+
+<!-- Submit - Start -->
+<section class="px-4 py-5 my-5 text-center">
+  <img src="/img/publish-seller.png" class="d-block mx-auto mb-4 img-fluid" alt="Publish your seller for FREE today" width="566" height="208" loading="lazy">
+  <h1 class="display-5 fw-bold">Publish your services Today!</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Publish your Seller profile in front of thousands of people for free.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a href="/logging" class="btn btn-primary btn-dark btn-lg">Become a Seller</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+ 
+<!-- Submit - End -->

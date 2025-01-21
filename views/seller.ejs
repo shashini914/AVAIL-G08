@@ -1,0 +1,65 @@
+<% if(seller != null ) { %>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%- seller.name %></li>
+    </ol>
+  </nav>
+
+
+  <div class="row">
+
+    <div class="col-12 col-md-4">
+      <img src="/uploads/<%- seller.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- seller.name %>" loading="lazy">
+    </div>
+
+    <div class="col-12 col-md-8">
+      <div class="row">
+        <div class="col-12"><h1><%- seller.name %></h1></div>
+        <div class="col-12 mb-4"><i class="bi bi-tag"></i> <%- seller.category %></div>
+        <div class="col-12" style="white-space: pre-line;">
+          <h4>service description</h4>
+          <%- seller.description %>
+        </div>
+      </div>
+
+      <div class="row pt-4">
+        <div class="col-12">
+          <h4>Informations:</h4>
+          <ul class="list-group list-group-flush">
+            <% seller.ingredients.forEach(function(ingredients, index){ %>
+              <li class="list-group-item"><%= ingredients %></li>
+            <% }) %>
+          </ul> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<br><br><div>
+  <p>
+      <h3>Suited For Every Individuals Budget</h3>
+      AVAIL allows individuals to find the best prices that meet their budgets, request quotes and even directly <br>contact the service provider for any questions and cost breakdowns.
+      <br>
+      <h3>Safe Quality Work</h3>
+      AVAIL only allows quality service providers who are of no danger to our customers, <br> provide quality work within the given timeframe. Therefore you can find the 
+      right service provider in just a few taps.
+      <br>
+      <h3>24/7 Customer Support</h3>
+      The AVAIL team offers around the clock support to help users with any issues they encounter on the application or <br> with their service povider. The comapny also has a FAQ section 
+      for any uncertainties 
+      <br>
+      <h3>Trusted sellers</h3>
+      We ensure every seller is trustable.           
+  </p>
+</div>
+
+<% } else { %>
+  <p>This category is empty at the moment.</p>
+<% } %>
+
+
